@@ -50,6 +50,7 @@ class HomePage extends StatelessWidget {
 
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(100),
+              // 컨테이너 사용시 컬러와 데코레이션 동시에 사용x, 데코레이션 안에 컬러를 넣거나?,
               color: Colors.black,
             ),
             child: Icon(Icons.search, color: Colors.white),
