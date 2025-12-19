@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_practice_1/title_row.dart';
+// 1. 일단 'Scaffold' 안에서 작업
+// 2. 완성되면 위젯클래스로 분리
+// 3. 위젯클래스를 별도의 파일로 분리
+// 4. Scaffold에 위젯 배치
+// 5. 변경되어야 하는 부분들 속성으로 정의해서 수정!
 
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(home: HomePage());
@@ -39,6 +47,8 @@ class MyApp extends StatelessWidget {
 ///    - 작은앨범
 
 class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,9 +72,11 @@ class HomePage extends StatelessWidget {
               ),
             ),
             // 제목행
-            // 큰앨범들어가는 로우
+            TitleRow(title: "New Albums"),
+            // TODO 큰앨범들어가는 로우
             // 제목행
-            // 작은앨범들어가는 로우
+            TitleRow(title: "Song List"),
+            // TODO 작은앨범들어가는 로우
           ],
         ),
       ),
