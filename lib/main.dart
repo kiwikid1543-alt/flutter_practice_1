@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_practice_1/big_album.dart';
+import 'package:flutter_practice_1/rounded_image.dart';
 import 'package:flutter_practice_1/title_row.dart';
 // 1. 일단 'Scaffold' 안에서 작업
 // 2. 완성되면 위젯클래스로 분리
@@ -63,17 +65,29 @@ class HomePage extends StatelessWidget {
             AspectRatio(
               // 가로크기 / 세로크기
               aspectRatio: 2.5 / 1,
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(20), //circular(원의 반지름)
-                child: Image.network(
-                  'https://picsum.photos/300/200',
-                  fit: BoxFit.cover,
-                ),
-              ),
+              child: RoundedImage(imageUrl: 'https://picsum.photos/300/200'),
             ),
             // 제목행
             TitleRow(title: "New Albums"),
-            // TODO 큰앨범들어가는 로우
+            Row(
+              children: [
+                BigAlbum(
+                  imageUrl: 'https://picsum.photos/id/98/200/200',
+                  title: 'Open',
+                  artist: 'Silk sonic',
+                ),
+                BigAlbum(
+                  imageUrl: 'https://picsum.photos/id/190/200/200',
+                  title: 'PPIP',
+                  artist: '파인애플',
+                ),
+                BigAlbum(
+                  imageUrl: 'https://picsum.photos/id/980/200/200',
+                  title: 'NO Pain',
+                  artist: '실리카겔',
+                ),
+              ],
+            ),
             // 제목행
             TitleRow(title: "Song List"),
             // TODO 작은앨범들어가는 로우
