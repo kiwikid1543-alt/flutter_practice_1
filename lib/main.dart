@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_practice_1/big_album.dart';
+import 'package:flutter_practice_1/mini_album.dart';
 import 'package:flutter_practice_1/rounded_image.dart';
 import 'package:flutter_practice_1/title_row.dart';
 // 1. 일단 'Scaffold' 안에서 작업
@@ -90,7 +91,22 @@ class HomePage extends StatelessWidget {
             ),
             // 제목행
             TitleRow(title: "Song List"),
-            // TODO 작은앨범들어가는 로우
+            //  작은앨범들어가는 로우
+            MiniAlbum(
+              imageUrl: 'https://picsum.photos/id/222/200/200',
+              title: 'fufu UUJ',
+              artist: 'Fifi',
+            ),
+            MiniAlbum(
+              imageUrl: 'https://picsum.photos/id/223/200/200',
+              title: 'Ohoh',
+              artist: 'Nono',
+            ),
+            MiniAlbum(
+              imageUrl: 'https://picsum.photos/id/211/200/200',
+              title: 'dodi',
+              artist: 'opio',
+            ),
           ],
         ),
       ),
