@@ -156,7 +156,7 @@ class HomePage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(100),
                 ),
               ),
-              SizedBox(width: 3),
+
               Container(
                 width: 5,
                 height: 5,
@@ -170,5 +170,27 @@ class HomePage extends StatelessWidget {
         ],
       ),
     );
+  }
+}
+
+extension DoubleExt on double {
+  //
+  Widget get w {
+    return SizedBox(width: this);
+  }
+
+  Widget get h {
+    return SizedBox(height: this);
+  }
+}
+
+extension IntExt on double {
+  // getter => 파라미터 없는 함수에서 괄호 생략!
+  Widget get w {
+    return SizedBox(width: this);
+  }
+
+  Widget get h {
+    return SizedBox(height: this);
   }
 }
