@@ -65,5 +65,4 @@ class DefaultFirebaseOptions {
     storageBucket: 'fir-easy-7b880.firebasestorage.app',
     iosBundleId: 'com.example.flutterPractice1',
   );
-
 }
