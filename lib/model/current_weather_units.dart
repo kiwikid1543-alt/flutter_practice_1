@@ -1,44 +1,20 @@
-class CurrentWeatherUnits {
-  /// 시간 형식
-  final String time;
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-  /// 간격 단위
-  final String interval;
+part 'current_weather_units.freezed.dart';
+part 'current_weather_units.g.dart';
 
-  /// 온도 단위
-  final String temperature;
+@freezed
+abstract class CurrentWeatherUnits with _$CurrentWeatherUnits {
+  const factory CurrentWeatherUnits({
+    required String time,
+    required String interval,
+    required String temperature,
+    required String windspeed,
+    required String winddirection,
+    @JsonKey(name: "is_day") required String isDay,
+    required String weathercode,
+  }) = _CurrentWeatherUnits;
 
-  /// 풍속 단위
-  final String windspeed;
-
-  /// 풍향 단위
-  final String winddirection;
-
-  /// 낮/밤 구분 형식
-  final String isDay;
-
-  /// 날씨 코드 형식
-  final String weathercode;
-
-  CurrentWeatherUnits({
-    required this.time,
-    required this.interval,
-    required this.temperature,
-    required this.windspeed,
-    required this.winddirection,
-    required this.isDay,
-    required this.weathercode,
-  });
-
-  factory CurrentWeatherUnits.fromJson(Map<String, dynamic> json) {
-    return CurrentWeatherUnits(
-      time: json['time'] ?? '',
-      interval: json['interval'] ?? '',
-      temperature: json['temperature'] ?? '',
-      windspeed: json['windspeed'] ?? '',
-      winddirection: json['winddirection'] ?? '',
-      isDay: json['is_day'] ?? '',
-      weathercode: json['weathercode'] ?? '',
-    );
-  }
+  factory CurrentWeatherUnits.fromJson(Map<String, dynamic> json) =>
+      _$CurrentWeatherUnitsFromJson(json);
 }

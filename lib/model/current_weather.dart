@@ -1,44 +1,20 @@
-class CurrentWeather {
-  /// 데이터 기록 시간
-  final DateTime time;
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-  /// 데이터 갱신 간격
-  final int interval;
+part 'current_weather.freezed.dart';
+part 'current_weather.g.dart';
 
-  /// 기온
-  final double temperature;
+@freezed
+abstract class CurrentWeather with _$CurrentWeather {
+  const factory CurrentWeather({
+    required String time,
+    required int interval,
+    required double temperature,
+    required double windspeed,
+    required int winddirection,
+    @JsonKey(name: "is_day") required int isDay,
+    required int weathercode,
+  }) = _CurrentWeather;
 
-  /// 풍속
-  final double windspeed;
-
-  /// 풍향 (도)
-  final int winddirection;
-
-  /// 낮 여부 (1: 낮, 0: 밤)
-  final int isDay;
-
-  /// 기상 상태 코드
-  final int weathercode;
-
-  CurrentWeather({
-    required this.time,
-    required this.interval,
-    required this.temperature,
-    required this.windspeed,
-    required this.winddirection,
-    required this.isDay,
-    required this.weathercode,
-  });
-
-  factory CurrentWeather.fromJson(Map<String, dynamic> json) {
-    return CurrentWeather(
-      time: DateTime.parse(json['time']),
-      interval: json['interval']?.toInt() ?? 0,
-      temperature: json['temperature']?.toDouble() ?? 0.0,
-      windspeed: json['windspeed']?.toDouble() ?? 0.0,
-      winddirection: json['winddirection']?.toInt() ?? 0,
-      isDay: json['is_day']?.toInt() ?? 0,
-      weathercode: json['weathercode']?.toInt() ?? 0,
-    );
-  }
+  factory CurrentWeather.fromJson(Map<String, dynamic> json) =>
+      _$CurrentWeatherFromJson(json);
 }
