@@ -14,3 +14,10 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+
+---
+우리가 만들려는거!
+=> Firestore에 있는 맛집, HomePage에 보여주기
+=> 언제 가져화야됨?
+=>
